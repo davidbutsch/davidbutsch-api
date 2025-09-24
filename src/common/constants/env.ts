@@ -7,6 +7,9 @@ const keys = [
   "NODE_ENV",
   "PORT",
   "LOG_PATH",
+  "AWS_REGION",
+  "ACCESS_KEY_ID",
+  "SECRET_ACCESS_KEY",
   "USER_POOL_ID",
   "USER_POOL_CLIENT_ID",
 ] as const; // const assert creates readonly "tuple" array
