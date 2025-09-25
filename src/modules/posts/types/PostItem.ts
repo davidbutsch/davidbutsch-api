@@ -5,6 +5,5 @@ export type PostItemTag = {
 
 export type PostItem = {
   id: string;
-  url: string;
   tags: PostItemTag[];
 };

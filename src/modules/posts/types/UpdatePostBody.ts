@@ -3,7 +3,7 @@ import { z } from "zod";
 
 export const updatePostBodySchema = z
   .strictObject({
-    url: z.string(),
+    id: z.string(),
     tags: z.array(postDtoTagSchema),
   })
   .partial();

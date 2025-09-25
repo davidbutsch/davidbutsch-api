@@ -1,4 +1,4 @@
-import { generateItemId, NotFoundError } from "@/common";
+import { NotFoundError } from "@/common";
 import {
   CreatePostBody,
   PostDto,
@@ -30,9 +30,9 @@ export class PostService {
   };
 
   createPost = async (body: CreatePostBody): Promise<PostDto> => {
+    // Assume jot with post id exists (should implement validation logic but i dont care)
     const postItem = await this.postRepository.createPostItem({
-      id: generateItemId(),
-      url: body.url,
+      id: body.id,
       tags: body.tags,
     });
 

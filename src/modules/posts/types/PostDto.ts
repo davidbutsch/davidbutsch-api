@@ -8,6 +8,6 @@ export const postDtoTagSchema = z.strictObject({
 export type PostDtoTag = z.infer<typeof postDtoTagSchema>;
 
 export type PostDto = {
-  url: string;
+  id: string;
   tags: PostDtoTag[];
 };
