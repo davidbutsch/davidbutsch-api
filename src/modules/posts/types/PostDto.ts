@@ -2,6 +2,7 @@ import { z } from "zod";
 
 export const postDtoTagSchema = z.strictObject({
   color: z.string(),
+  label: z.string(),
   icon: z.string(),
 });
 
