@@ -1,5 +1,5 @@
-import { postDtoTagSchema } from "@/modules/posts";
 import { z } from "zod";
+import { postDtoTagSchema } from "./PostDto";
 
 export const createPostBodySchema = z.strictObject({
   url: z.string(),
