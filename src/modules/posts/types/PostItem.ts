@@ -6,6 +6,7 @@ export type PostItemTag = {
 
 export type PostItem = {
   id: string;
+  jotId: string;
   tags: PostItemTag[];
   createdAt: number;
 };

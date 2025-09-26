@@ -2,7 +2,7 @@ import { z } from "zod";
 import { postDtoTagSchema } from "./PostDto";
 
 export const createPostBodySchema = z.strictObject({
-  id: z.string(),
+  jotId: z.string(),
   tags: z.array(postDtoTagSchema),
 });
 
