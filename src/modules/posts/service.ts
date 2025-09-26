@@ -30,10 +30,13 @@ export class PostService {
   };
 
   createPost = async (body: CreatePostBody): Promise<PostDto> => {
+    const now = Date.now();
+
     // Assume jot with post id exists (should implement validation logic but i dont care)
     const postItem = await this.postRepository.createPostItem({
       id: body.id,
       tags: body.tags,
+      createdAt: now,
     });
 
     // Map item to dto

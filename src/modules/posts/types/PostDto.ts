@@ -11,4 +11,5 @@ export type PostDtoTag = z.infer<typeof postDtoTagSchema>;
 export type PostDto = {
   id: string;
   tags: PostDtoTag[];
+  createdAt: number;
 };
