@@ -1,9 +1,8 @@
 import { z } from "zod";
-import { postDtoTagSchema } from "./PostDto";
 
 export const createPostBodySchema = z.strictObject({
   jotId: z.string(),
-  tags: z.array(postDtoTagSchema),
+  tags: z.array(z.string()),
 });
 
 export type CreatePostBody = z.infer<typeof createPostBodySchema>;

@@ -43,7 +43,6 @@ export class PostService {
 
     // Map item to dto
     const postDto = postItemToDto(postItem);
-    console.log(postDto);
 
     return postDto;
   };

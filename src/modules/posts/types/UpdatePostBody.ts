@@ -1,10 +1,9 @@
-import { postDtoTagSchema } from "@/modules/posts";
 import { z } from "zod";
 
 export const updatePostBodySchema = z
   .strictObject({
     jotId: z.string(),
-    tags: z.array(postDtoTagSchema),
+    tags: z.array(z.string()),
   })
   .partial();
 
