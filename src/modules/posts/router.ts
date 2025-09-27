@@ -1,4 +1,9 @@
-import { validateRequestBody, validateRequestParams } from "@/common";
+import {
+  requireUserGroup,
+  validateCognitoToken,
+  validateRequestBody,
+  validateRequestParams,
+} from "@/common";
 import {
   createPostBodySchema,
   deletePostParamsSchema,
@@ -22,12 +27,16 @@ postRouter.get(
 
 postRouter.post(
   "/",
+  validateCognitoToken,
+  requireUserGroup("admins"),
   validateRequestBody(createPostBodySchema),
   postController.createPost
 );
 
 postRouter.patch(
   "/:postId",
+  validateCognitoToken,
+  requireUserGroup("admins"),
   validateRequestParams(updatePostParamsSchema),
   validateRequestBody(updatePostBodySchema),
   postController.updatePost
@@ -35,6 +44,8 @@ postRouter.patch(
 
 postRouter.delete(
   "/:postId",
+  validateCognitoToken,
+  requireUserGroup("admins"),
   validateRequestParams(deletePostParamsSchema),
   postController.deletePost
 );
