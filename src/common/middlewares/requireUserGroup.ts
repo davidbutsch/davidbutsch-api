@@ -7,7 +7,7 @@ export const requireUserGroup = (group: string): RequestHandler => {
       return next(new UnauthorizedError("Missing token payload."));
 
     // If group exists in token payload, move to next
-    if (response.locals.tokenPayload["cognito:groups"].includes(group)) next();
+    if (response.locals.tokenPayload["cognito:groups"]?.includes(group)) next();
     else return next(new UnauthorizedError("Missing user group."));
   };
 };
